@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cqow47bch5ocs"]
+
+[ext_resource type="Script" uid="uid://c404fc3ig74wm" path="res://Scenes/spawner.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://2oqfqxx5b61g" path="res://Scenes/enemies.tscn" id="2_0xm2m"]
+
+[node name="Main" type="Node2D" unique_id=146180780]
+
+[node name="Spawner" type="Node2D" parent="." unique_id=1212769134]
+position = Vector2(53, 45)
+script = ExtResource("1_ig7tw")
+enemyScene = ExtResource("2_0xm2m")
+
+[node name="Timer" type="Timer" parent="Spawner" unique_id=1242558631]
+autostart = true
+
+[node name="ActiveEnemies" type="Node2D" parent="." unique_id=940700203]
