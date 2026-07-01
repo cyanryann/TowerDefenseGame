@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://2oqfqxx5b61g"]
 
 [ext_resource type="Script" uid="uid://brgwa3wp7cl2g" path="res://Scenes/enemy.gd" id="1_4gyqm"]
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://Assets/icon.svg" id="1_7k104"]
+[ext_resource type="Texture2D" uid="uid://b8gkkrqawyomq" path="res://Assets/Art/icon.svg" id="1_7k104"]
 
 [node name="Enemies" type="Node2D" unique_id=1713210650]
 
@@ -14,4 +14,5 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_7k104")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BasicEnemy" unique_id=1172500415]
+visible = false
 polygon = PackedVector2Array(-15, -15, -13, -16, 13, -16, 15, -15, 16, -13, 16, 13, 15, 15, 13, 16, -13, 16, -15, 15, -16, 13, -16, -13)

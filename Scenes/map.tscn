@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c024m6lr40mv5"]
+
+[ext_resource type="Script" uid="uid://d1es0gca7tavi" path="res://Scenes/path.gd" id="1_ci6au"]
+[ext_resource type="Script" uid="uid://cdebha58c2ydj" path="res://Scenes/map.gd" id="1_p3ir5"]
+
+[sub_resource type="Curve2D" id="Curve2D_p3ir5"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -94, 139, -60.68696, -52.019875, 60.68696, 52.019875, 230, 127, 60.569443, -43.000244, -60.569443, 43.000244, 227, 274, 45.71461, -49.137913, -45.71461, 49.137913, 84, 357, -60.87488, -74.95141, 60.87488, 74.95141, 93, 542, -50.749672, 97.05406, 50.749672, -97.05406, 360, 514, -46, 75.210205, 46, -75.210205, 423, 129, -23.290758, -60.87575, 23.290758, 60.87575, 576, 129, -101.139465, -73.85778, 101.139465, 73.85778, 585, 579, -39.73896, 40.359882, 39.73896, -40.359882, 1093, 567, 39.11804, 21.111322, -39.11804, -21.111322, 1090, 463, 48.14193, 34.387108, -48.14193, -34.387108, 717, 446, -48.180458, 41.24525, 48.180458, -41.24525, 721, 326, -33.529747, 57.124756, 33.529747, -57.124756, 1041, 312, 52.778305, 42.843567, -52.778305, -42.843567, 1024, 89, 44.93559, -50.478027, -44.93559, 50.478027, 724, 79, -45.32725, -25.457771, 45.32725, 25.457771, 728, 192, 0, 0, 0, 0, 1261, 203)
+}
+point_count = 18
+
+[node name="Map" type="Node2D" unique_id=1771127953]
+script = ExtResource("1_p3ir5")
+schedule = Array[Array]([[0]])
+
+[node name="Path2D" type="Path2D" parent="." unique_id=22584761]
+y_sort_enabled = true
+curve = SubResource("Curve2D_p3ir5")
+script = ExtResource("1_ci6au")
+
+[node name="Timer" type="Timer" parent="." unique_id=404214023]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
