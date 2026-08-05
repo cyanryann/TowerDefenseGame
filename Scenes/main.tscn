@@ -1,3 +1,14 @@
 [gd_scene format=3 uid="uid://bb13aflorf87g"]
 
-[node name="Main" type="Node2D" unique_id=755921360]
+[ext_resource type="Script" uid="uid://brsm41axhpnky" path="res://Scenes/main.gd" id="1_jjgbg"]
+
+[node name="Main" type="Node2D" unique_id=755921360 node_paths=PackedStringArray("scoreUI")]
+script = ExtResource("1_jjgbg")
+scoreUI = NodePath("Label")
+
+[node name="Label" type="Label" parent="." unique_id=1928585275]
+offset_left = 1.0
+offset_top = -2.0
+offset_right = 180.0
+offset_bottom = 38.0
+text = "Points: 0"

@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://eou4mq5n6oh3"]
+
+[ext_resource type="Script" uid="uid://da72xxodlf5px" path="res://Scenes/tower.gd" id="1_mh5eo"]
+[ext_resource type="Texture2D" uid="uid://b8gkkrqawyomq" path="res://Assets/Art/icon.svg" id="1_ndpwd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(121, 126)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 395.00507
+
+[node name="Tower" type="Node2D" unique_id=1548441072]
+script = ExtResource("1_mh5eo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=39621303]
+texture = ExtResource("1_ndpwd")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2018860535]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1629796247]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="AttackRange" type="Area2D" parent="." unique_id=1863659650]
+collision_layer = 2
+collision_mask = 2
+
+[node name="Range" type="CollisionShape2D" parent="AttackRange" unique_id=1539678227]
+shape = SubResource("CircleShape2D_g4v7s")
+debug_color = Color(0.96168846, 1.540184e-06, 0.51167804, 0.41960785)
+
+[node name="AttackTimer" type="Timer" parent="." unique_id=74184862]
+wait_time = 0.25
+
+[connection signal="body_entered" from="AttackRange" to="." method="_on_attack_range_body_entered"]
+[connection signal="body_exited" from="AttackRange" to="." method="_on_attack_range_body_exited"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
